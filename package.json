@@ -46,5 +46,18 @@
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^28.0.0",
     "stylelint-order": "^5.0.0"
-  }
+  },
+  "description": "Para realizar o projeto, atente-se a cada passo descrito a seguir. Se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryber/sd-028-b-project-frontend-online-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tryber/sd-028-b-project-frontend-online-store/issues"
+  },
+  "homepage": "https://github.com/tryber/sd-028-b-project-frontend-online-store#readme"
 }
