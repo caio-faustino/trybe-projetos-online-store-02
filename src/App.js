@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-import Home from './pages/Cart';
+import Cart from './pages/Cart';
 
 export default class App extends Component {
   render() {
