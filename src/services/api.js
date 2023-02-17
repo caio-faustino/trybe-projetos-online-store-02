@@ -22,6 +22,7 @@ export async function getQueryByProdutc(query) {
   return data;
 }
 
+// requisição de busca de itens por suas devidas categorias
 export async function getProductsFromCategory(categoryId) {
   const URL = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`;
   const response = await fetch(URL);
