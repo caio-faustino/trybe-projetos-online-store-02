@@ -41,7 +41,6 @@ export default class CategoryBtn extends Component {
           }
         </div>
       </div>
-      
     );
   }
 }
