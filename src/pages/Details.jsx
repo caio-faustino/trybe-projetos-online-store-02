@@ -38,9 +38,12 @@ export default class Details extends Component {
     return (
       <section>
         <div>
-          <h2 data-testid="product-detail-name" >{title}</h2>
-          <img data-testid="product-detail-image" src={ image } alt={ `imagem de um ${title}` } />
-          <h2 data-testid="product-detail-price" >{price}</h2>
+          <h2 data-testid="product-detail-name">{title}</h2>
+          <img
+            data-testid="product-detail-image"
+            src={ image }
+            alt={ `imagem de um ${title}` } />
+          <h2 data-testid="product-detail-price">{price}</h2>
         </div>
       </section>
     );
