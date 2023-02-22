@@ -11,7 +11,10 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route path="/cart" component={ Cart } />
-          <Route exact path="/details/:id" component={ Details } />
+          <Route
+            exact path="/details/:id"
+            render={ (props) => <Details { ...props } /> }
+          />
         </Switch>
       </BrowserRouter>
     );
