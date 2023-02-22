@@ -17,6 +17,8 @@ export default class Details extends Component {
     this.fetchProduct(id);
   };
 
+  // checando se erro no github foi resolvido
+
   fetchProduct = async (productId) => {
     const response = await fetch(`https://api.mercadolibre.com/items/${productId}`);
     const data = await response.json();
