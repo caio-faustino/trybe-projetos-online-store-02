@@ -42,7 +42,8 @@ export default class Details extends Component {
           <img
             data-testid="product-detail-image"
             src={ image }
-            alt={ `imagem de um ${title}` } />
+            alt={ `imagem de um ${title}` }
+          />
           <h2 data-testid="product-detail-price">{price}</h2>
         </div>
       </section>
