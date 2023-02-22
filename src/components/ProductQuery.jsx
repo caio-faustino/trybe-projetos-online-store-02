@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class productQuery extends Component {
   render() {
@@ -9,11 +10,11 @@ class productQuery extends Component {
         data-testid="product-detail-link"
         to={ `/Details/${id}` }
       >
-        <section data-testid="product">
-            <h2>{title}</h2>
-            <img src={ image } alt={ `imagem de um ${title}` } />
-            <h2>{price}</h2>
-        </section>
+      <section data-testid="product">
+        <h2>{title}</h2>
+        <img src={ image } alt={ `imagem de um ${title}` } />
+        <h2>{price}</h2>
+      </section>
       </Link>
     );
   }
