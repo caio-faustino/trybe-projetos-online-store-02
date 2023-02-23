@@ -5,7 +5,7 @@ import Search from '../components/Search';
 import Category from '../components/Category';
 import { getQueryByProdutc } from '../services/api';
 import ProductQuery from '../components/ProductQuery';
-import Details from './Details';
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
   state = {
