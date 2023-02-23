@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { getCategories } from '../services/api';
+import { Link } from 'react-router-dom';
 import Search from '../components/Search';
 import Category from '../components/Category';
 import { getQueryByProdutc } from '../services/api';
 import ProductQuery from '../components/ProductQuery';
-import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
   state = {
