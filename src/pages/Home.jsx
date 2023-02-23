@@ -5,6 +5,7 @@ import Search from '../components/Search';
 import Category from '../components/Category';
 import { getQueryByProdutc } from '../services/api';
 import ProductQuery from '../components/ProductQuery';
+import Details from './Details';
 
 export default class Home extends Component {
   state = {
@@ -81,6 +82,12 @@ export default class Home extends Component {
             />
           ))
             : <p>{msg}</p>}
+          <Link
+            data-testid="product-detail-link"
+            to={ `/Details/${product.id}` }
+          >
+            Details
+          </Link>
         </div>
       </div>
     );
