@@ -36,6 +36,7 @@ export default class Details extends Component {
       image,
       title,
     } = this.state;
+    const { history } = this.props;
 
     return (
       <section>
@@ -48,6 +49,13 @@ export default class Details extends Component {
           />
           <h2 data-testid="product-detail-price">{price}</h2>
         </div>
+        <button
+          type="button"
+          data-testid="shopping-cart-button"
+          onClick={ () => history.push('/cart') }
+        >
+          Add to cart
+        </button>
       </section>
     );
   }
