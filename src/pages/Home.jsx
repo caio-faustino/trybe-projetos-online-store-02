@@ -82,12 +82,6 @@ export default class Home extends Component {
             />
           ))
             : <p>{msg}</p>}
-          <Link
-            data-testid="product-detail-link"
-            to={ `/Details/${product.id}` }
-          >
-            Details
-          </Link>
         </div>
       </div>
     );
