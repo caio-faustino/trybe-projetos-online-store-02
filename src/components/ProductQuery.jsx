@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class productQuery extends Component {
@@ -17,6 +18,7 @@ class productQuery extends Component {
 }
 
 productQuery.propTypes = {
+  // id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,

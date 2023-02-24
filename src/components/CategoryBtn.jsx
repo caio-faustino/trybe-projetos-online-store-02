@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getProductsFromCategory } from '../services/api';
 
 export default class CategoryBtn extends Component {
@@ -29,17 +30,22 @@ export default class CategoryBtn extends Component {
         >
           { name }
         </button>
-        <div className="products">
-          {
-            categorySelected.map((item) => (
-              <div key={ item.id } data-testid="product">
-                <p>{item.title}</p>
-                <img src={ item.thumbnail } alt={ item.title } />
-                <p>{item.price}</p>
-              </div>
-            ))
-          }
-        </div>
+        <Link
+          data-testid="product-detail-link"
+          to={ `/details/${id}` }
+        >
+          <div className="products">
+            {
+              categorySelected.map((item) => (
+                <div key={ item.id } data-testid="product">
+                  <p>{item.title}</p>
+                  <img src={ item.thumbnail } alt={ item.title } />
+                  <p>{item.price}</p>
+                </div>
+              ))
+            }
+          </div>
+        </Link>
       </div>
     );
   }

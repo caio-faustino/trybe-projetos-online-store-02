@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { getProductById } from '../services/api';
 
 export default class Details extends Component {
   state = {
-    price: 0,
-    image: '',
-    title: '',
+    product: {},
+    // price: 0,
+    // image: '',
+    // title: '',
   };
 
   componentDidMount() {
@@ -14,49 +17,60 @@ export default class Details extends Component {
 
   getItem = async () => {
     const { match: { params: { id } } } = this.props;
-    this.fetchProduct(id);
+    const product = await getProductById(id);
+    this.setState({
+      product,
+    });
   };
 
   // esperrando correção de erro
 
-  fetchProduct = async (productId) => {
-    const response = await fetch(`https://api.mercadolibre.com/items/${productId}`);
-    const data = await response.json();
+  // fetchProduct = async (productId) => {
+  //   const response = await fetch(`https://api.mercadolibre.com/items/${productId}`);
+  //   const data = await response.json();
 
-    this.setState({
-      price: data.price,
-      image: data.thumbnail,
-      title: data.title,
-    });
-  };
+  //   this.setState({
+  //     price: data.price,
+  //     image: data.thumbnail,
+  //     title: data.title,
+  //   });
+  // };
 
   render() {
     const {
-      price,
-      image,
-      title,
+      product:
+      {
+        id,
+        price,
+        thumbnail,
+        title,
+      },
     } = this.state;
     const { history } = this.props;
 
     return (
-      <section>
-        <div>
-          <h2 data-testid="product-detail-name">{title}</h2>
-          <img
-            data-testid="product-detail-image"
-            src={ image }
-            alt={ `imagem de um ${title}` }
-          />
-          <h2 data-testid="product-detail-price">{price}</h2>
-        </div>
-        <button
-          type="button"
-          data-testid="shopping-cart-button"
-          onClick={ () => history.push('/cart') }
-        >
-          Add to cart
-        </button>
-      </section>
+      <>
+        <section>
+          <div>
+            <h2 data-testid="product-detail-name">{title}</h2>
+            <img
+              data-testid="product-detail-image"
+              src={ thumbnail }
+              alt={ `imagem de um ${title}` }
+            />
+            <h2 data-testid="product-detail-price">{price}</h2>
+          </div>
+          <button
+            type="button"
+            data-testid="shopping-cart-button"
+            value={ id }
+            onClick={ () => history.push('/cart') }
+          >
+            Add to cart
+          </button>
+        </section>
+        <Link to="/" alt="return">return</Link>
+      </>
     );
   }
 }
