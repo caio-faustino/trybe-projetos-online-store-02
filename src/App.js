@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import Details from './pages/Details';
+// IMPORTANDO COMPONENTES
 
-export default class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={ Home } />
-          <Route path="/cart" component={ Cart } />
-          <Route
-            exact
-            path="/Details/:id"
-            render={ (props) => <Details { ...props } /> }
-          />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
+import React from 'react';
+import './App.css';
+import Rotas from './Rotas/Rotas';
+
+export default function App() {
+  return (
+    <section className="App">
+      <Rotas />
+    </section>
+  );
 }
